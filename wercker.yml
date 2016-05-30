@@ -33,8 +33,9 @@ build:
         name: gradle jar
         code: |
           ./gradlew jar
-after-steps:
+  after-steps:
     - slack-notifier:
         url: $SLACK_URL
         channel: develop
         username: werckerbot
+        notify_on: "build"
