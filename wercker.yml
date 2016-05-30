@@ -29,3 +29,7 @@ build:
         name: gradle build and test
         code: |
           ./gradlew check
+    - script:
+        name: gradle jar
+        code: |
+          ./gradlew jar
