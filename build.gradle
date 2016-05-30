@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.google.inject:guice:${GUICE_VERSION}"
+    compile "com.google.guava:guava:${GUAVA_VERSION}"
+    compile "org.modelmapper:modelmapper:${MODEL_MAPPER_VERSION}"
+    testCompile "junit:junit:${JUNIT_VERSION}"
+    testCompile "org.mockito:mockito-all:${MOCKITO_VERSION}"
+    testCompile "com.google.truth:truth:${TRUTH_VERSION}"
+}
+
+// ignore check failure
+[checkstyleMain, checkstyleTest, findbugsMain, findbugsTest]*.ignoreFailures = true
+
+findbugs {
+    toolVersion = "3.0.1"
+    effort = "max"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
