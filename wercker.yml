@@ -28,4 +28,4 @@ build:
     - script:
         name: gradle build and test
         code: |
-          gradle check
+          gradlew check
