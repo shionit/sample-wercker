@@ -23,5 +23,8 @@ build:
     - script:
         name: gradlew
         code: |
-          gradlew
+          ./gradlew
+    - script:
+        name: gradle build and test
+        code: |
           gradle check
