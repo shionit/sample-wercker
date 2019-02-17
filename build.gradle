@@ -1,6 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
+plugins {
+  id 'java'
+  id 'checkstyle'
+  id "com.github.spotbugs" version "1.6.9"
+}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -19,9 +21,9 @@ dependencies {
 }
 
 // ignore check failure
-[checkstyleMain, checkstyleTest, findbugsMain, findbugsTest]*.ignoreFailures = true
+[checkstyleMain, checkstyleTest, spotbugsMain, spotbugsTest]*.ignoreFailures = true
 
-findbugs {
-    toolVersion = "3.0.1"
+spotbugs {
+    toolVersion = '3.1.11'
     effort = "max"
 }
