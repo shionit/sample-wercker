@@ -25,7 +25,3 @@ findbugs {
     toolVersion = "3.0.1"
     effort = "max"
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.12'
-}

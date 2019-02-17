@@ -3,7 +3,10 @@
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
 # using java 8
-box: java:8
+box:
+  id: amazoncorretto:8
+  env:
+    JAVA_HOME: /usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
